@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nourhene Ayadi — DevOps, Cloud & AI Engineer</title>
-  <meta name="description" content="Portfolio of Nourhene Ayadi, a DevOps, Cloud & AI Engineer specializing in CI/CD, IaC, and AI deployment.">
+  <meta name="description" content="Portfolio of Nourhene Ayadi, a DevOps, Cloud & AI Engineer based in Tunis, Tunisia.">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -96,7 +96,7 @@
       display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;
     }
     .hero-copy h1 {
-      font-family: var(--font-heading); font-size: 2.8rem; line-height: 1.2;
+      font-family: var(--font-heading); font-size: 2.6rem; line-height: 1.2;
       background: linear-gradient(135deg, #ffffff 0%, var(--accent-cyan) 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       margin-bottom: 16px;
@@ -107,7 +107,7 @@
     .btn {
       padding: 12px 24px; border-radius: 6px; font-family: var(--font-mono);
       font-size: 0.9rem; font-weight: 600; text-decoration: none; cursor: pointer;
-      transition: all 0.3s;
+      transition: all 0.3s; display: inline-block;
     }
     .btn-solid {
       background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
@@ -130,6 +130,7 @@
     }
     .dot { width: 10px; height: 10px; border-radius: 50%; }
     .dot-red { background: #ff5f56; } .dot-yellow { background: #ffbd2e; } .dot-green { background: #27c93f; }
+    .term-prompt { color: var(--accent-pink); font-weight: bold; margin-bottom: 12px; }
     .term-row { display: flex; margin-bottom: 8px; }
     .term-key { color: var(--accent-purple); width: 80px; }
     .term-val { color: var(--accent-cyan); }
@@ -171,8 +172,8 @@
     .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
 
     /* Timeline */
-    .timeline-item { padding: 20px; margin-bottom: 16px; border-left: 2px solid var(--accent-purple); }
-    .timeline-date { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan); margin-bottom: 4px; }
+    .timeline-item { padding: 24px; margin-bottom: 20px; border-left: 2px solid var(--accent-purple); }
+    .timeline-date { font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-cyan); margin-bottom: 6px; }
 
     /* Footer */
     footer { padding: 60px 0 30px; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
@@ -195,6 +196,7 @@
         <a href="#experience">// Experience</a>
         <a href="#projects">// Projects</a>
         <a href="#stack">// Stack</a>
+        <a href="#education">// Education</a>
         <a href="#contact">// Contact</a>
       </nav>
     </div>
@@ -206,11 +208,11 @@
     <section class="hero">
       <div class="hero-grid">
         <div class="hero-copy">
-          <h1>Bridging Code & Cosmic Infrastructure</h1>
-          <p>DevOps, Cloud & AI Engineer specializing in shipping production containerized microservices, CI/CD automation, and deploying high-scale AI architectures.</p>
+          <h1>I build the infrastructure that gets AI systems into production.</h1>
+          <p>Entry-level DevOps, Automation & Cloud Computing Engineer based in Tunis, Tunisia — with hands-on experience shipping containerized applications, CI/CD pipelines, and a generative-AI platform built for a real client.</p>
           <div class="cta-row">
             <a class="btn btn-solid" href="NOURHENE_AYADI_Updated.pdf" target="_blank">Download CV</a>
-            <a class="btn btn-outline" href="mailto:NOURHENEAYADI2000@GMAIL.COM">Email Me</a>
+            <a class="btn btn-outline" href="mailto:NOURHENEAYADI2000@GMAIL.COM">Email me</a>
           </div>
         </div>
 
@@ -220,13 +222,14 @@
             <div class="dot dot-yellow"></div>
             <div class="dot dot-green"></div>
           </div>
-          <div class="term-row"><span class="term-key">User:</span><span class="term-val">Nourhene Ayadi</span></div>
-          <div class="term-row"><span class="term-key">Role:</span><span class="term-val">DevOps & Cloud Engineer</span></div>
-          <div class="term-row"><span class="term-key">Location:</span><span class="term-val">Tunis, Tunisia</span></div>
-          <div class="term-row"><span class="term-key">Degree:</span><span class="term-val">Industrial Computing (ENIG)</span></div>
-          <div class="term-row" style="margin-top: 12px;">
+          <div class="term-prompt">$ whoami</div>
+          <div class="term-row"><span class="term-key">name</span><span class="term-val">Nourhene Ayadi</span></div>
+          <div class="term-row"><span class="term-key">role</span><span class="term-val">DevOps, Cloud & AI Engineer</span></div>
+          <div class="term-row"><span class="term-key">based</span><span class="term-val">Tunis, Tunisia</span></div>
+          <div class="term-row"><span class="term-key">status</span><span class="term-val">Open to opportunities</span></div>
+          <div class="term-row" style="margin-top: 16px;">
             <span class="status-pulse"></span>
-            <span style="color: #27c93f;">System status: Ready for Deployment</span>
+            <span style="color: #27c93f;">System ready for deployment</span>
           </div>
         </div>
       </div>
@@ -234,101 +237,177 @@
 
     <!-- About Section -->
     <section id="about">
-      <h2 class="section-title">About Me</h2>
+      <h2 class="section-title">About</h2>
       <div class="glass-card" style="padding: 28px;">
-        <p style="color: var(--text-main); font-size: 1.05rem;">
-          Entry-level DevOps & AI Engineer with a background in industrial computing and automation. I specialize in containerizing applications, writing Infrastructure-as-Code (Terraform), constructing robust CI/CD pipelines (GitLab CI, Jenkins, Azure DevOps), and deploying complex RAG/AI systems into production environments.
+        <p style="color: var(--text-main); font-size: 1.05rem; line-height: 1.8;">
+          I'm an entry-level engineer from Tunis with a foundation in industrial computing and automation, now focused on DevOps, cloud infrastructure, and applied AI. Over the past two years I've moved from embedded systems and PCB design to containerizing production applications, building CI/CD pipelines, and shipping a generative-AI platform for a real external client. I like owning a system end-to-end — from architecture to the pipeline that deploys it — and I pick up new tools quickly when a project calls for them.
         </p>
       </div>
     </section>
 
-    <!-- Graduation Flagship Project -->
+    <!-- Projects Section -->
     <section id="projects">
-      <h2 class="section-title">Featured Graduation Project (PFE)</h2>
+      <h2 class="section-title">Graduation project</h2>
+      
       <div class="glass-card flagship-card">
         <span class="flagship-tag">ACTIA Technologies // Client: Institut Molière</span>
-        <h3>Conversational AI Platform for Language Learning</h3>
+        <h3>Conversational AI Platform for Institut Molière</h3>
+        <p style="color: var(--accent-purple); font-family: var(--font-mono); font-size: 0.85rem; margin-bottom: 12px;">Three-part generative-AI platform for language learning, defended 26/06/2026</p>
+        
         <p style="color: var(--text-muted); margin-bottom: 16px;">
-          Built an end-to-end multi-part AI platform featuring Hybrid RAG (ChromaDB + BM25 keyword search via Reciprocal Rank Fusion), speech feedback using Whisper V3, and automated evaluation using Gemini Flash. Owned the system end-to-end: architecture, FastAPI backend, and deployment pipelines.
+          A hybrid RAG chatbot combining ChromaDB semantic search with BM25 keyword retrieval via Reciprocal Rank Fusion, then cross-encoder reranking and query expansion for precision — served by Llama 3.3-70B with a local Ollama fallback for resilience. Alongside it, a speech-based corrective-feedback robot uses Whisper Large V3 for recognition and generates structured, Pydantic-validated pedagogical feedback spoken back through gTTS. A third component, an adaptive evaluation engine, uses Gemini 2.0 Flash with search grounding to generate curriculum-aligned questions and score learners automatically.
         </p>
+        
+        <p style="color: var(--text-main); font-size: 0.95rem; margin-bottom: 16px;">
+          <strong>My role:</strong> Owned the system end-to-end — architecture, prompt engineering, backend (FastAPI), UI, and performance evaluation (latency and retrieval-quality benchmarking) — for a real external client.
+        </p>
+
         <div class="tech-stack-pills">
           <span class="pill">Python</span>
           <span class="pill">FastAPI</span>
           <span class="pill">ChromaDB</span>
-          <span class="pill">Llama 3.3-70B</span>
-          <span class="pill">Whisper V3</span>
-          <span class="pill">Docker</span>
+          <span class="pill">BM25/Whoosh</span>
+          <span class="pill">Sentence-Transformers</span>
+          <span class="pill">Llama 3.3-70B (Groq)</span>
+          <span class="pill">Ollama</span>
+          <span class="pill">Gemini 2.0 Flash</span>
+          <span class="pill">Whisper Large V3</span>
+          <span class="pill">Pydantic</span>
+          <span class="pill">gTTS</span>
         </div>
       </div>
 
-      <h2 class="section-title" style="font-size: 1.4rem;">Technical Projects</h2>
+      <h2 class="section-title" style="font-size: 1.4rem;">Technical projects</h2>
       <div class="grid-2">
+        
         <div class="glass-card" style="padding: 24px;">
-          <h3 style="color: #fff; margin-bottom: 8px;">End-to-End Football Platform CI/CD</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">Automated build, semver, and deployment of a Kafka & MongoDB microservices platform to a Helm-orchestrated K3s Kubernetes cluster using Jenkins.</p>
+          <h3 style="color: #fff; margin-bottom: 8px;">End-to-End CI/CD Pipeline for a Football Platform</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">Built a Jenkins pipeline automating build, semantic versioning, and deployment of a multi-service app (REST API, Kafka, MongoDB) to a Helm-orchestrated K3s cluster with Secrets/ConfigMaps and automated health checks. Sprint planning and documentation ran through Jira and Confluence, agile end-to-end.</p>
           <div class="tech-stack-pills">
-            <span class="pill">Jenkins</span><span class="pill">Kubernetes</span><span class="pill">Helm</span><span class="pill">Kafka</span>
+            <span class="pill">Jenkins</span><span class="pill">Kubernetes</span><span class="pill">Helm</span><span class="pill">Kafka</span><span class="pill">MongoDB</span><span class="pill">Jira</span><span class="pill">Confluence</span>
           </div>
         </div>
 
         <div class="glass-card" style="padding: 24px;">
-          <h3 style="color: #fff; margin-bottom: 8px;">Two-Tier AWS & AKS Microservice</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">Provisioned AWS VPC, EC2, and RDS with Terraform & Ansible; deployed microservices on Azure AKS with Azure DevOps pipelines.</p>
+          <h3 style="color: #fff; margin-bottom: 8px;">Two-Tier AWS Deployment & AKS Microservice</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">Provisioned AWS infrastructure — VPC, autoscaling EC2, RDS — with reusable Terraform modules and Ansible playbooks, then separately deployed a containerized microservice to Azure AKS with its own Azure DevOps CI/CD pipeline.</p>
           <div class="tech-stack-pills">
-            <span class="pill">AWS</span><span class="pill">Terraform</span><span class="pill">Ansible</span><span class="pill">Azure AKS</span>
+            <span class="pill">AWS</span><span class="pill">Terraform</span><span class="pill">Ansible</span><span class="pill">Azure AKS</span><span class="pill">Azure DevOps</span>
           </div>
         </div>
+
+        <div class="glass-card" style="padding: 24px;">
+          <h3 style="color: #fff; margin-bottom: 8px;">NLP Intent-Detection Chatbot</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">Fine-tuned DistilBERT on the SNIPS dataset for intent classification, with the full approach and results documented in an academic report.</p>
+          <div class="tech-stack-pills">
+            <span class="pill">Python</span><span class="pill">DistilBERT</span><span class="pill">Transformers</span>
+          </div>
+        </div>
+
+        <div class="glass-card" style="padding: 24px;">
+          <h3 style="color: #fff; margin-bottom: 8px;">LecturBot — French Reading-Assistant Robot</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">A bilingual (EN/AR) speech-correction web app built on local models — Ollama and faster-whisper — designed to run on hardware-constrained devices with no GPU and 8GB RAM.</p>
+          <div class="tech-stack-pills">
+            <span class="pill">Ollama</span><span class="pill">faster-whisper</span><span class="pill">Python</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <!-- Experience Section -->
     <section id="experience">
-      <h2 class="section-title">Professional Experience</h2>
+      <h2 class="section-title">Experience</h2>
       
       <div class="glass-card timeline-item">
-        <div class="timeline-date">Sep 2025 – Dec 2025</div>
-        <h3 style="color: #fff;">DevOps Intern & Full-Stack Deployment</h3>
+        <div class="timeline-date">Sep – Dec 2025</div>
+        <h3 style="color: #fff;">DevOps Intern & Full-Stack Application Deployment</h3>
         <p style="color: var(--accent-cyan); font-size: 0.9rem; margin-bottom: 8px;">VEARDIA</p>
-        <p style="color: var(--text-muted); font-size: 0.95rem;">Containerized React, Laravel, and MySQL with Docker Compose. Designed GitLab CI pipelines with Trivy security scanning, and set up observability with Prometheus, Grafana, Loki, and Alertmanager.</p>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Containerized and deployed a full-stack production app (React/Nginx, Laravel/PHP-FPM, MySQL) with Docker Compose, built a GitLab CI/CD pipeline with automated security scanning (Trivy), and stood up a full observability stack — Prometheus, Grafana, Loki, Promtail, and Alertmanager — with containers managed through Portainer.</p>
       </div>
 
       <div class="glass-card timeline-item">
-        <div class="timeline-date">Jul 2024 – Aug 2024</div>
-        <h3 style="color: #fff;">Industrial Computing & Automation Intern</h3>
-        <p style="color: var(--accent-cyan); font-size: 0.9rem; margin-bottom: 8px;">CRMN Research Center</p>
-        <p style="color: var(--text-muted); font-size: 0.95rem;">Designed partial-discharge detection hardware (KiCad PCB, STM32 microcontrollers) and integrated real-time LabVIEW acquisition data interfaces.</p>
+        <div class="timeline-date">Jul – Aug 2024</div>
+        <h3 style="color: #fff;">Engineer Intern, Industrial Computing and Automation</h3>
+        <p style="color: var(--accent-cyan); font-size: 0.9rem; margin-bottom: 8px;">Center for Research in Microelectronics and Nanotechnology (CRMN)</p>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Designed and built a partial-discharge detector from PCB (KiCad) to firmware, integrating an STM32 microcontroller, and built a real-time LabVIEW acquisition and analysis interface for sensor data.</p>
+      </div>
+
+      <div class="glass-card timeline-item">
+        <div class="timeline-date">Mar – Jun 2024</div>
+        <h3 style="color: #fff;">GUI Development Intern (C++)</h3>
+        <p style="color: var(--accent-cyan); font-size: 0.9rem; margin-bottom: 8px;">CodeAlpha</p>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Built an interactive Qt Widgets interface for a real-time digital guessing game with live feedback.</p>
       </div>
     </section>
 
     <!-- Stack Section -->
     <section id="stack">
-      <h2 class="section-title">Technical Stack</h2>
+      <h2 class="section-title">Stack</h2>
       <div class="grid-4">
-        <div class="glass-card" style="padding: 20px; text-align: center;">
-          <h4 style="color: var(--accent-cyan); margin-bottom: 8px;">Cloud & IaC</h4>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">AWS, Azure, Terraform, Ansible, Docker, Kubernetes</p>
+        
+        <div class="glass-card" style="padding: 20px;">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 12px; font-family: var(--font-mono);">Languages & frameworks</h4>
+          <div class="tech-stack-pills">
+            <span class="pill">Python</span><span class="pill">FastAPI</span><span class="pill">C++</span><span class="pill">Qt</span>
+          </div>
         </div>
-        <div class="glass-card" style="padding: 20px; text-align: center;">
-          <h4 style="color: var(--accent-cyan); margin-bottom: 8px;">CI/CD & Monitoring</h4>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">GitLab CI, Jenkins, Azure DevOps, Prometheus, Grafana, Loki</p>
+
+        <div class="glass-card" style="padding: 20px;">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 12px; font-family: var(--font-mono);">Cloud & infrastructure</h4>
+          <div class="tech-stack-pills">
+            <span class="pill">AWS</span><span class="pill">Azure</span><span class="pill">Kubernetes</span><span class="pill">Docker</span><span class="pill">Terraform</span><span class="pill">Ansible</span>
+          </div>
         </div>
-        <div class="glass-card" style="padding: 20px; text-align: center;">
-          <h4 style="color: var(--accent-cyan); margin-bottom: 8px;">Development</h4>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">Python, FastAPI, C++, Linux, Bash, SQL, Git</p>
+
+        <div class="glass-card" style="padding: 20px;">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 12px; font-family: var(--font-mono);">CI/CD & observability</h4>
+          <div class="tech-stack-pills">
+            <span class="pill">Jenkins</span><span class="pill">GitLab CI</span><span class="pill">Prometheus</span><span class="pill">Grafana</span><span class="pill">Loki</span><span class="pill">Alertmanager</span>
+          </div>
         </div>
-        <div class="glass-card" style="padding: 20px; text-align: center;">
-          <h4 style="color: var(--accent-cyan); margin-bottom: 8px;">Certifications</h4>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">AWS Cloud Practitioner, Azure Fundamentals, IBM Cloud</p>
+
+        <div class="glass-card" style="padding: 20px;">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 12px; font-family: var(--font-mono);">Collaboration</h4>
+          <div class="tech-stack-pills">
+            <span class="pill">Jira</span><span class="pill">Confluence</span><span class="pill">Git</span><span class="pill">GitLab</span>
+          </div>
         </div>
+
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+      
+      <div class="glass-card timeline-item">
+        <div class="timeline-date">2022–2026</div>
+        <h3 style="color: #fff;">Engineering Degree, Industrial Computing and Automation</h3>
+        <p style="color: var(--accent-cyan); font-size: 0.9rem;">National Engineering School of Gabès, Tunisia (ENIG)</p>
+      </div>
+
+      <div class="glass-card timeline-item">
+        <div class="timeline-date">2019–2022</div>
+        <h3 style="color: #fff;">Preparatory Cycle, Mathematics-Physics</h3>
+        <p style="color: var(--accent-cyan); font-size: 0.9rem;">Higher School of Science and Technology, Hammam Sousse, Tunisia (ESSTHS)</p>
       </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" style="border-bottom: none;">
-      <h2 class="section-title">Get In Touch</h2>
-      <div class="glass-card" style="padding: 32px; text-align: center; max-width: 600px; margin: 0 auto;">
-        <p style="color: var(--text-main); margin-bottom: 20px;">Open to DevOps, Cloud, and AI engineering roles globally (including relocation to UAE).</p>
-        <a class="btn btn-solid" href="mailto:nourheneayadi2000@gmail.com">nourheneayadi2000@gmail.com</a>
+      <h2 class="section-title">Contact</h2>
+      <div class="glass-card" style="padding: 32px; text-align: center; max-width: 650px; margin: 0 auto;">
+        <p style="color: var(--text-main); font-size: 1.1rem; margin-bottom: 16px;">
+          Open to DevOps, Cloud, and AI engineering roles — including relocation to the UAE.
+        </p>
+        <p style="color: var(--text-muted); font-family: var(--font-mono); margin-bottom: 24px;">
+          📍 Tunis, Tunisia | 📞 +216 29 685 347
+        </p>
+        <div class="cta-row" style="justify-content: center;">
+          <a class="btn btn-solid" href="mailto:NOURHENEAYADI2000@GMAIL.COM">NOURHENEAYADI2000@GMAIL.COM</a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/nourhene-ayadi-58878625b/" target="_blank">LinkedIn Profile</a>
+        </div>
       </div>
     </section>
 
