@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nourhene Ayadi — DevOps, Cloud & AI Engineer</title>
+  <meta name="description" content="Portfolio of Nourhene Ayadi, a DevOps, Cloud & AI Engineer specializing in CI/CD, IaC, and AI deployment.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #050b18;
+      --bg-card: rgba(13, 23, 42, 0.7);
+      --border-glow: rgba(0, 210, 255, 0.3);
+      --accent-cyan: #00d2ff;
+      --accent-purple: #9d4edd;
+      --accent-pink: #f72585;
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --font-heading: 'Space Grotesk', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'Fira Code', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Cosmic Galaxy Background Canvas */
+    #galaxy-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      background: radial-gradient(circle at 50% 30%, #0d1b3a 0%, #050b18 70%);
+    }
+
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* Glassmorphism Cards */
+    .glass-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .glass-card:hover {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 20px rgba(0, 210, 255, 0.25);
+      transform: translateY(-3px);
+    }
+
+    /* Navigation */
+    header.site-nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(5, 11, 24, 0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 210, 255, 0.15);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 24px;
+    }
+    .nav-logo {
+      font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700;
+      color: #fff; text-shadow: 0 0 10px var(--accent-cyan);
+    }
+    .nav-logo span { color: var(--accent-cyan); }
+    nav.links a {
+      color: var(--text-muted); text-decoration: none; font-size: 0.95rem;
+      margin-left: 24px; font-family: var(--font-mono); transition: color 0.3s;
+    }
+    nav.links a:hover { color: var(--accent-cyan); text-shadow: 0 0 8px var(--accent-cyan); }
+
+    /* Hero Section */
+    section.hero { padding: 80px 0 60px; }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;
+    }
+    .hero-copy h1 {
+      font-family: var(--font-heading); font-size: 2.8rem; line-height: 1.2;
+      background: linear-gradient(135deg, #ffffff 0%, var(--accent-cyan) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+    }
+    .hero-copy p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 24px; }
+
+    .cta-row { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn {
+      padding: 12px 24px; border-radius: 6px; font-family: var(--font-mono);
+      font-size: 0.9rem; font-weight: 600; text-decoration: none; cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn-solid {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      color: #fff; border: none; box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+    }
+    .btn-solid:hover { box-shadow: 0 0 25px rgba(157, 78, 221, 0.6); transform: scale(1.02); }
+    .btn-outline {
+      background: transparent; color: var(--accent-cyan); border: 1px solid var(--accent-cyan);
+    }
+    .btn-outline:hover { background: rgba(0, 210, 255, 0.1); box-shadow: 0 0 15px rgba(0, 210, 255, 0.3); }
+
+    /* Terminal Widget */
+    .terminal-box {
+      background: #020612; border: 1px solid rgba(0, 210, 255, 0.3);
+      border-radius: 8px; padding: 20px; font-family: var(--font-mono); font-size: 0.85rem;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    }
+    .terminal-header {
+      display: flex; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 8px;
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-red { background: #ff5f56; } .dot-yellow { background: #ffbd2e; } .dot-green { background: #27c93f; }
+    .term-row { display: flex; margin-bottom: 8px; }
+    .term-key { color: var(--accent-purple); width: 80px; }
+    .term-val { color: var(--accent-cyan); }
+    .status-pulse {
+      display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+      background: var(--accent-cyan); box-shadow: 0 0 10px var(--accent-cyan);
+      margin-right: 6px; animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+
+    /* Sections */
+    section { padding: 60px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+    h2.section-title {
+      font-family: var(--font-heading); font-size: 1.8rem; color: #fff;
+      margin-bottom: 32px; display: flex; align-items: center; gap: 12px;
+    }
+    h2.section-title::before {
+      content: '//'; color: var(--accent-cyan); font-family: var(--font-mono);
+    }
+
+    /* Flagship / Project Highlight */
+    .flagship-card {
+      border-left: 4px solid var(--accent-cyan); padding: 32px; margin-bottom: 40px;
+    }
+    .flagship-tag {
+      font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-purple);
+      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; display: block;
+    }
+    .flagship-card h3 { font-size: 1.5rem; color: #fff; margin-bottom: 12px; }
+    .tech-stack-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .pill {
+      background: rgba(0, 210, 255, 0.1); border: 1px solid rgba(0, 210, 255, 0.3);
+      color: var(--accent-cyan); padding: 4px 10px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 0.75rem;
+    }
+
+    /* Grid Layouts */
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+
+    /* Timeline */
+    .timeline-item { padding: 20px; margin-bottom: 16px; border-left: 2px solid var(--accent-purple); }
+    .timeline-date { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan); margin-bottom: 4px; }
+
+    /* Footer */
+    footer { padding: 60px 0 30px; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
+
+    @media (max-width: 768px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-copy h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="galaxy-canvas"></canvas>
+
+  <header class="site-nav">
+    <div class="wrap nav-inner">
+      <div class="nav-logo">Nourhene<span>.dev</span></div>
+      <nav class="links">
+        <a href="#about">// About</a>
+        <a href="#experience">// Experience</a>
+        <a href="#projects">// Projects</a>
+        <a href="#stack">// Stack</a>
+        <a href="#contact">// Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1>Bridging Code & Cosmic Infrastructure</h1>
+          <p>DevOps, Cloud & AI Engineer specializing in shipping production containerized microservices, CI/CD automation, and deploying high-scale AI architectures.</p>
+          <div class="cta-row">
+            <a class="btn btn-solid" href="NOURHENE_AYADI_Updated.pdf" target="_blank">Download CV</a>
+            <a class="btn btn-outline" href="mailto:NOURHENEAYADI2000@GMAIL.COM">Email Me</a>
+          </div>
+        </div>
+
+        <div class="terminal-box">
+          <div class="terminal-header">
+            <div class="dot dot-red"></div>
+            <div class="dot dot-yellow"></div>
+            <div class="dot dot-green"></div>
+          </div>
+          <div class="term-row"><span class="term-key">User:</span><span class="term-val">Nourhene Ayadi</span></div>
+          <div class="term-row"><span class="term-key">Role:</span><span class="term-val">DevOps & Cloud Engineer</span></div>
+          <div class="term-row"><span class="term-key">Location:</span><span class="term-val">Tunis, Tunisia</span></div>
+          <div class="term-row"><span class="term-key">Degree:</span><span class="term-val">Industrial Computing (ENIG)</span></div>
+          <div class="term-row" style="margin-top: 12px;">
+            <span class="status-pulse"></span>
+            <span style="color: #27c93f;">System status: Ready for Deployment</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="glass-card" style="padding: 28px;">
+        <p style="color: var(--text-main); font-size: 1.05rem;">
+          Entry-level DevOps & AI Engineer with a background in industrial computing and automation. I specialize in containerizing applications, writing Infrastructure-as-Code (Terraform), constructing robust CI/CD pipelines (GitLab CI, Jenkins, Azure DevOps), and deploying complex RAG/AI systems into production environments.
+        </p>
+      </div>
+    </section>
+
+    <!-- Graduation Flagship Project -->
+    <section id="projects">
+      <h2 class="section-title">Featured Graduation Project (PFE)</h2>
+      <div class="glass-card flagship-card">
+        <span class="flagship-tag">ACTIA Technologies // Client: Institut Molière</span>
+        <h3>Conversational AI Platform for Language Learning</h3>
+        <p style="color: var(--text-muted); margin-bottom: 16px;">
+          Built an end-to-end multi-part AI platform featuring Hybrid RAG (ChromaDB + BM25 keyword search via Reciprocal Rank Fusion), speech feedback using Whisper V3, and automated evaluation using Gemini Flash. Owned the system end-to-end: architecture, FastAPI backend, and deployment pipelines.
+        </p>
+        <div class="tech-stack-pills">
+          <span class="pill">Python</span>
+          <span class="pill">FastAPI</span>
+          <span class="pill">ChromaDB</span>
+          <span class="pill">Llama 3.3-70B</span>
+          <span class="pill">Whisper V3</span>
+          <span class="pill">Docker</span>
+        </div>
+      </div>
+
+      <h2 class="section-title" style="font-size: 1.4rem;">Technical Projects</h2>
+      <div class="grid-2">
+        <div class="glass-card" style="padding: 24px;">
+          <h3 style="color: #fff; margin-bottom: 8px;">End-to-End Football Platform CI/CD</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Automated build, semver, and deployment of a Kafka & MongoDB microservices platform to a Helm-orchestrated K3s Kubernetes cluster using Jenkins.</p>
+          <div class="tech-stack-pills">
+            <span class="pill">Jenkins</span><span class="pill">Kubernetes</span><span class="pill">Helm</span><span class="pill">Kafka</span>
+          </div>
+        </div>
+
+        <div class="glass-card" style="padding: 24px;">
+          <h3 style="color: #fff; margin-bottom: 8px;">Two-Tier AWS & AKS Microservice</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Provisioned AWS VPC, EC2, and RDS with Terraform & Ansible; deployed microservices on Azure AKS with Azure DevOps pipelines.</p>
+          <div class="tech-stack-pills">
+            <span class="pill">AWS</span><span class="pill">Terraform</span><span class="pill">Ansible</span><span class="pill">Azure AKS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+      <h2 class="section-title">Professional Experience</h2>
+      
+      <div class="glass-card timeline-item">
+        <div class="timeline-date">Sep 2025 – Dec 2025</div>
+        <h3 style="color: #fff;">DevOps Intern & Full-Stack Deployment</h3>
+        <p style="color: var(--accent-cyan); font-size: 0.9rem; margin-bottom: 8px;">VEARDIA</p>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Containerized React, Laravel, and MySQL with Docker Compose. Designed GitLab CI pipelines with Trivy security scanning, and set up observability with Prometheus, Grafana, Loki, and Alertmanager.</p>
+      </div>
+
+      <div class="glass-card timeline-item">
+        <div class="timeline-date">Jul 2024 – Aug 2024</div>
+        <h3 style="color: #fff;">Industrial Computing & Automation Intern</h3>
+        <p style="color: var(--accent-cyan); font-size: 0.9rem; margin-bottom: 8px;">CRMN Research Center</p>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Designed partial-discharge detection hardware (KiCad PCB, STM32 microcontrollers) and integrated real-time LabVIEW acquisition data interfaces.</p>
+      </div>
+    </section>
+
+    <!-- Stack Section -->
+    <section id="stack">
+      <h2 class="section-title">Technical Stack</h2>
+      <div class="grid-4">
+        <div class="glass-card" style="padding: 20px; text-align: center;">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 8px;">Cloud & IaC</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">AWS, Azure, Terraform, Ansible, Docker, Kubernetes</p>
+        </div>
+        <div class="glass-card" style="padding: 20px; text-align: center;">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 8px;">CI/CD & Monitoring</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">GitLab CI, Jenkins, Azure DevOps, Prometheus, Grafana, Loki</p>
+        </div>
+        <div class="glass-card" style="padding: 20px; text-align: center;">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 8px;">Development</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Python, FastAPI, C++, Linux, Bash, SQL, Git</p>
+        </div>
+        <div class="glass-card" style="padding: 20px; text-align: center;">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 8px;">Certifications</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">AWS Cloud Practitioner, Azure Fundamentals, IBM Cloud</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="border-bottom: none;">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="glass-card" style="padding: 32px; text-align: center; max-width: 600px; margin: 0 auto;">
+        <p style="color: var(--text-main); margin-bottom: 20px;">Open to DevOps, Cloud, and AI engineering roles globally (including relocation to UAE).</p>
+        <a class="btn btn-solid" href="mailto:nourheneayadi2000@gmail.com">nourheneayadi2000@gmail.com</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© 2026 Nourhene Ayadi — Built for GitHub & Vercel Deployment</p>
+    </div>
+  </footer>
+
+  <!-- Galaxy Starfield Animation Script -->
+  <script>
+    const canvas = document.getElementById('galaxy-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let width, height;
+    let stars = [];
+
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+
+    function createStars() {
+      stars = [];
+      const count = Math.floor((width * height) / 3000);
+      for (let i = 0; i < count; i++) {
+        stars.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          radius: Math.random() * 1.5,
+          alpha: Math.random(),
+          speed: Math.random() * 0.005 + 0.002
+        });
+      }
+    }
+
+    function drawStars() {
+      ctx.clearRect(0, 0, width, height);
+      for (let star of stars) {
+        star.alpha += star.speed;
+        if (star.alpha > 1 || star.alpha < 0) star.speed = -star.speed;
+        
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(0, 210, 255, ${Math.abs(star.alpha)})`;
+        ctx.fill();
+      }
+      requestAnimationFrame(drawStars);
+    }
+
+    window.addEventListener('resize', () => { resize(); createStars(); });
+    resize();
+    createStars();
+    drawStars();
+  </script>
+</body>
+</html>
